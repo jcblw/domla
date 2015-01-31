@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/jcblw/domdom",
   "devDependencies": {
-    "browserify": "^8.1.1"
+    "browserify": "^8.1.1",
+    "tape": "^3.5.0",
+    "tape-run": "^0.3.0"
   }
 }
