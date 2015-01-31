@@ -40,7 +40,7 @@ Everything together makes some cool looking javascript
 ```javascript
 var el = (
     div( { className: 'foo' },
-        span( 'hello world ),
+        span( 'hello world' ),
     );
 );
 // add it to the page
