@@ -1,7 +1,7 @@
 {
   "name": "domla",
-  "version": "0.1.0",
-  "description": "wrapper around dom element creationg to making dom nodes in javascript less verbose an more declaritive",
+  "version": "0.1.1",
+  "description": "wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive",
   "main": "index.js",
   "scripts": {
     "example": "browserify -r ./index.js:domla -o ./examples/bundle.js -b firefox",
