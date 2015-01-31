@@ -1,0 +1,28 @@
+{
+  "name": "domla",
+  "version": "0.1.0",
+  "description": "wrapper around dom element creationg to making dom nodes in javascript less verbose an more declaritive",
+  "main": "index.js",
+  "scripts": {
+    "example": "browserify -r ./index.js:domla -o ./examples/bundle.js -b firefox",
+    "test": "browserify ./test/* | tape-run -b firefox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcblw/domdom"
+  },
+  "keywords": [
+    "DOM",
+    "element",
+    "creation"
+  ],
+  "author": "@jcblw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcblw/domdom/issues"
+  },
+  "homepage": "https://github.com/jcblw/domdom",
+  "devDependencies": {
+    "browserify": "^8.1.1"
+  }
+}
