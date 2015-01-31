@@ -1,6 +1,6 @@
 {
   "name": "domla",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jcblw/domdom"
+    "url": "https://github.com/jcblw/domla"
   },
   "keywords": [
     "DOM",
@@ -19,9 +19,9 @@
   "author": "@jcblw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jcblw/domdom/issues"
+    "url": "https://github.com/jcblw/domla/issues"
   },
-  "homepage": "https://github.com/jcblw/domdom",
+  "homepage": "https://github.com/jcblw/domla",
   "devDependencies": {
     "browserify": "^8.1.1",
     "tape": "^3.5.0",
