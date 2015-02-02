@@ -10,13 +10,18 @@ function makeArray( arr, slice ) {
 }
 
 var addAttributes =
-module.exports._addAttributes = 
+module.exports._addAttributes =
 function addAttributes( el, attrs ) {
+    var eventName, value;
     for( var key in attrs ) {
+        value = attrs[ key ];
         if ( key === 'className' ) {
-            el.className = attrs[ key ];
+            el.className = value;
+        } else if ( /^on/.test( key ) && typeof value === 'function' ) {
+            eventName = key.replace( /^on/, '' ).toLowerCase();
+            el.addEventListener( eventName, value );
         } else {
-            el.setAttribute( key, attrs[ key ] );
+            el.setAttribute( key, value );
         }
     }
 }

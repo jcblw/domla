@@ -37,9 +37,9 @@ test( 'testing domla._createElement', function( t ) {
     t.throws( domla._createElement.bind( null, 'foo' ), /foo/g, 'when passing an invalid tagName doomla._createElement will throw an error with the tagName in it' );
     t.equals( domla._createElement( 'div', { 'data-foo': 'bar' } ).getAttribute( 'data-foo' ), 'bar', 'When passing in an attributes object into the second arugment of _createElement it will add those key values as attribute on the return element' );
     t.equals( domla._createElement( 'div', {}, child ).children.length, 1, 'when passing in a valid DOM element into the third argument of _createElement it will append that element to the DOM node returned' );
-    t.equals( domla._createElement( 'div', {}, child2, child3 ).children.length, 2, 'when passing in a valid DOM element into the third argument and fourth arugment of _createElement it will append that element to the DOM node returned' );    
+    t.equals( domla._createElement( 'div', {}, child2, child3 ).children.length, 2, 'when passing in a valid DOM element into the third argument and fourth arugment of _createElement it will append that element to the DOM node returned' );
     t.equals( domla._createElement( 'div', {}, 'foo' ).textContent, 'foo', 'when passing in a string into the third argument of _createElement it will set the textContent of the DOM node returned' );
-    t.equals( domla._createElement( 'div', 'bar' ).textContent, 'bar', 'when passing in a string into the second argument of _createElement it will set the textContent of the DOM node returned' );    
+    t.equals( domla._createElement( 'div', 'bar' ).textContent, 'bar', 'when passing in a string into the second argument of _createElement it will set the textContent of the DOM node returned' );
     t.end();
 } );
 
@@ -51,4 +51,19 @@ test( 'testing to see if tagNames are loading correctly', function( t ) {
     });
     t.end();
 
-} )
+} );
+
+
+test( 'testing to see if event is onClick events are bound', function( t ) {
+
+    function foo ( e ) {
+        t.equals( e instanceof MouseEvent, true, 'event is fired when adding the attribute onClick and a function' );
+        t.end();
+    }
+
+    var div = domla.div( { onClick: foo } );
+        event = new MouseEvent( 'click' );
+
+    div.dispatchEvent( event );
+    // should probably compile a good list of events to try here
+} );
