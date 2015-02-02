@@ -1,6 +1,6 @@
 {
   "name": "domla",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive",
   "main": "index.js",
   "scripts": {
