@@ -1,6 +1,38 @@
 # Domla [![Build Status](https://travis-ci.org/jcblw/domla.svg?branch=master)](https://travis-ci.org/jcblw/domla)
 
-wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive
+wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive. 
+
+## Uh Why?
+
+This is not meant to replace your templating engine. This is meant to help with times templating engines, or html is not available, like in a [browserify](http://browserify.org) ui component. Eg.
+
+```javascript
+// before
+var buttons = document.createElement( 'div' ),
+    use = document.createElement( 'button' ),
+    cancel = document.createElement( 'button' );
+    
+buttons.className = 'button-group';
+use.textContent = 'use';
+cancel.textContent = 'cancel';
+buttons.appendChild( use );
+buttons.appendChild( cancel );
+
+use.addEventListener( 'click', onUse );
+cancel.addEventListener( 'click', onCancel );
+// with domla
+var dom = require( 'domla' ),
+    div = dom.div,
+    button = dom.button,
+    buttons;
+
+buttons = (
+    div( { className: 'button-group' },
+        button( { onClick: onUse }, 'use' ),
+        button( { onClick: onCancel }, 'cancel' )
+    )
+);
+```
 
 ## Usage
 
@@ -16,8 +48,8 @@ div(); // < DIV > element
 To add attributes pass in an object as the first argument.
 
 ```javascript
-div( { className: 'foo', style: 'box-sizing: border-box;' } ); 
-// <div class="foo" style="box-sizing:border-box;"></div>
+div( { className: 'foo', style: 'box-sizing: border-box;', onClick: onFooClick } ); 
+// <div class="foo" style="box-sizing:border-box;"></div> plus a event listener
 ```
 
 > Important to note that you should use `className` rather then `class` because `class` is a reserved word in javascript.
@@ -40,8 +72,8 @@ Everything together makes some cool looking javascript
 ```javascript
 var el = (
     div( { className: 'foo' },
-        span( 'hello world' ),
-    );
+        span( 'hello world' )
+    )
 );
 // add it to the page
 document.body.appendChild( el );
