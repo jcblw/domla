@@ -1,6 +1,6 @@
 # Domla [![Build Status](https://travis-ci.org/jcblw/domla.svg?branch=master)](https://travis-ci.org/jcblw/domla)
 
-wrapper around dom element creation, making dom nodes in javascript less verbose an more declaritive. 
+Wrapper around dom element creation, making dom nodes in javascript less verbose and more declaritive. 
 
 ## Uh Why?
 
