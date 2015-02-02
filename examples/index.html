@@ -11,9 +11,13 @@
             h1 = DOM.h1,
             ul = DOM.ul,
             li = DOM.li,
+            button = DOM.button,
             style = DOM.style,
-            body = DOM.body,
             el, styles;
+
+        function foo() {
+            console.log( 'bar' );
+        }
 
         styles = (
             style( { type: 'text/css', rel: 'stylesheet' },
@@ -24,11 +28,12 @@
         el = (
             div( { className: 'wrapper' },
                 h1( {}, 'hello world' ),
-                ul( { className: 'list-wrapper'}, 
+                ul( { className: 'list-wrapper', onMouseOver: foo }, 
                     li( '1st item' ),
                     li( '2st item' ),
                     li( '3st item' )
-                )
+                ),
+                button( { onClick: foo }, 'foo' )
             )
         );
 

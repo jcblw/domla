@@ -132,13 +132,18 @@ function makeArray( arr, slice ) {
 }
 
 var addAttributes =
-module.exports._addAttributes = 
+module.exports._addAttributes =
 function addAttributes( el, attrs ) {
+    var eventName, value;
     for( var key in attrs ) {
+        value = attrs[ key ];
         if ( key === 'className' ) {
-            el.className = attrs[ key ];
+            el.className = value;
+        } else if ( /^on/.test( key ) && typeof value === 'function' ) {
+            eventName = key.replace( /^on/, '' ).toLowerCase();
+            el.addEventListener( eventName, value );
         } else {
-            el.setAttribute( key, attrs[ key ] );
+            el.setAttribute( key, value );
         }
     }
 }
@@ -146,12 +151,17 @@ function addAttributes( el, attrs ) {
 var isElement =
 module.exports._isElement =
 function isElement( el ) {
-    return el && typeof el === 'object' && el.tagName;
+    return ( el && typeof el === 'object' && el.tagName ) ? true : false;
 }
 
 var createElement =
 module.exports._createElement =
 function createElement( tagName, attrs ) {
+
+    if ( !~tags.indexOf( tagName ) ) {
+        throw new Error( 'could not create ' + tagName + ' element it is not a valid tag' );
+    }
+
     var rest = makeArray( arguments, 2 ),
         el = document.createElement( tagName );
 
@@ -178,4 +188,5 @@ function addToDOM( tagName ) {
 }
 
 tags.forEach( addToDOM );
+
 },{"./src/tags":1}]},{},[]);
