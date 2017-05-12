@@ -1,5 +1,7 @@
 # Domla [![Build Status](https://travis-ci.org/jcblw/domla.svg?branch=master)](https://travis-ci.org/jcblw/domla)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jcblw/domla.svg)](https://greenkeeper.io/)
+
 Wrapper around dom element creation, making dom nodes in javascript less verbose and more declaritive. 
 
 ## Uh Why?
