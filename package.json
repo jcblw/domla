@@ -25,6 +25,6 @@
   "devDependencies": {
     "browserify": "^14.3.0",
     "tape": "^4.6.3",
-    "tape-run": "^3.0.0"
+    "tape-run": "^6.0.0"
   }
 }
