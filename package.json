@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jcblw/domla",
   "devDependencies": {
-    "browserify": "^14.3.0",
+    "browserify": "^16.4.0",
     "tape": "^4.6.3",
     "tape-run": "^3.0.0"
   }
